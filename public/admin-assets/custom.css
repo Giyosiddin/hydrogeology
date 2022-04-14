@@ -1,0 +1,76 @@
+
+.dropzone {
+    position: relative;
+    border-radius: 5px;
+    border-color: #28a745;
+    color: white;
+    height: 36px;
+    margin: 30px auto;
+    text-align: center;
+    background: #28a745;
+    padding: 5px;
+    min-height: auto;
+    /* width: 200px; */
+    /* margin-top: 10px; */
+  }
+  
+  .dropzone.hover {
+    border: 10px solid #FE5;
+    color: #FE5;
+  }
+  
+  .dropzone div {
+    position: absolute;
+    /* color: #222; */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .dropzone img {
+    border-radius: 10px;
+    vertical-align: baseline;
+    max-width: 95%;
+    max-height: 95%;
+  }
+  
+  .dropzone [type="file"] {
+    cursor: pointer;
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    /* height: 150px; */
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  .img img {
+    max-width: 200px;
+}
+.img {
+    text-align: center;
+}
+.img .file_name i {
+  padding-right: 10px;
+}
+.form-group.row i {
+  padding-right: 5px;
+}
+li.nav-item ul.nav.nav-treeview {
+  padding-left: 25px;
+}
+/* .img a:before {
+    content: "x";
+    position: absolute;
+    font-size: 15px;
+    width: 200px;
+    height: -webkit-fill-available;
+    color: #fff;
+    top: 0;
+    background: rgb(47 79 79 / 35%);
+}
+
+.img {
+    position: relative;
+} */
