@@ -18,6 +18,7 @@ class CreateStaffTable extends Migration
             $table->string('phone')->nullable();
             $table->string('phone2')->nullable();
             $table->string('email')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

@@ -17,6 +17,7 @@ class CreateDecisionsTable extends Migration
             $table->id();
             $table->string('number_decision')->nullable();
             $table->string('views')->nullable();
+            $table->string('image')->nullable();
             $table->string('slug');
             $table->timestamps();
         });

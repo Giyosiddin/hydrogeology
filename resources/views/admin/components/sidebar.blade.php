@@ -45,8 +45,18 @@
           </li>
 
           <li class="nav-item">
+            <a href="{{ route('page.all')}}" class="nav-link">
+              <i class="nav-icon fas fa-pager"></i>
+              <p>
+                Pages
+                {{-- <span class="right badge badge-danger">New</span> --}}
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="{{ route('news.all')}}" class="nav-link">
-              <i class="nav-icon fas fa-calendar-alt"></i>
+              <i class="nav-icon fas fa-newspaper"></i>
+              {{-- <i class="nav-icon fas fa-calendar-alt"></i> --}}
               <p>
                 News
                 <!-- <span class="badge badge-info right">2</span> -->
@@ -54,65 +64,54 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#('study-abroad.index')}}" class="nav-link">
-              <i class="nav-icon fas fa-newspaper"></i>
+            <a href="{{ route('decision.all')}}" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
               <p>
-                Study abroad
+                Decision
                 <!-- <span class="badge badge-info right">2</span> -->
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-book"></i>
+            <a href="{{route('staff.all')}}" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
               <p>
-                Courses
-                <i class="fas fa-angle-left right"></i>
+                Staff
+                {{-- <i class="fas fa-angle-left right"></i> --}}
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="#('category.index')}}" class="nav-link">
-                  <i class="nav-icon fas fa-list-alt "></i>
-                  <p>
-                    Categories
-                  </p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#('course.index')}}" class="nav-link">
-                  <i class="fas fa-chalkboard-teacher nav-icon"></i>
-                  <p>Courses</p>
-                </a>
-              </li>
-              {{-- <li class="nav-item">
-                <a href="#('lesson.index')}}" class="nav-link">
-                  <i class="fas fa-laptop-code nav-icon"></i>
-                  <p>Lessons</p>
-                </a>
-              </li> --}}
-              <li class="nav-item">
-                <a href="#('admin.exams')}}" class="nav-link">
-                  <i class="fas fa-laptop-code nav-icon"></i>
-                  <p>Exams</p>
-                </a>
-              </li>
-            </ul>
           </li>
+           <li class="nav-item">
+            <a href="{{route('vacancy.all')}}" class="nav-link">
+                <i class="nav-icon fas fa-list-alt "></i>
+                <p>
+                Vacancies
+                </p>
+            </a>
+            </li>
+            <li class="nav-item">
+            <a href="#('course.index')}}" class="nav-link">
+                <i class="fas fa-chalkboard-teacher nav-icon"></i>
+                <p>Courses</p>
+            </a>
+            </li>
+            {{-- <li class="nav-item">
+            <a href="#('lesson.index')}}" class="nav-link">
+                <i class="fas fa-laptop-code nav-icon"></i>
+                <p>Lessons</p>
+            </a>
+            </li> --}}
+            <li class="nav-item">
+            <a href="#('admin.exams')}}" class="nav-link">
+                <i class="fas fa-laptop-code nav-icon"></i>
+                <p>Exams</p>
+            </a>
+            </li>
           <li class="nav-item">
             <a href="#('admin.testimonials')}}" class="nav-link">
               <i class="nav-icon fa fa-quote-left"></i>
               <p>
                 Testimonials
-                {{-- <span class="right badge badge-danger">New</span> --}}
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#('admin.page')}}" class="nav-link">
-              <i class="nav-icon fas fa-pager"></i>
-              <p>
-                Pages
                 {{-- <span class="right badge badge-danger">New</span> --}}
               </p>
             </a>

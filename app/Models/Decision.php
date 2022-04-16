@@ -15,4 +15,13 @@ class Decision extends Model
     {
         return $this->hasMany(DecisionTranslation::class);
     }
+
+    public static function boot() {
+        parent::boot();
+        self::deleting(function($news) {
+             $news->translations()->each(function($translation) {
+                $translation->delete();
+             });
+        });
+    }
 }

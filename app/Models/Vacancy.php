@@ -8,4 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 class Vacancy extends Model
 {
     use HasFactory;
+    public $guarded = [];
+
+    public function translations()
+    {
+        return $this->hasMany(VacancyTranslation::class);
+    }
+
+    public static function boot() {
+        parent::boot();
+        self::deleting(function($news) {
+             $news->translations()->each(function($translation) {
+                $translation->delete();
+             });
+        });
+    }
 }

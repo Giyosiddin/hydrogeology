@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Resources\NewsResource;
+use App\Models\News;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+Route::get('/news', function(){
+    return NewsResource::collection(News::with('translations')->paginate(1));
 });

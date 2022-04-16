@@ -24,6 +24,7 @@ Route::controller(AuthController::class)->group(function(){
 });
 
 Route::middleware('check.admin')->prefix('dashboard')->namespace('Admin')->group(function(){
+    Route::post('ckeditor/image_upload', 'MainController@upload')->name('upload');
 
     Route::get('/', 'MainController@index')->name('dashboard.index');
 
@@ -34,6 +35,42 @@ Route::middleware('check.admin')->prefix('dashboard')->namespace('Admin')->group
         Route::get('/edit/{id}','edit')->name('news.edit');
         Route::post('/update/{id}', 'update')->name('news.update');
         Route::get('/delete/{id}', 'delete')->name('news.delete');
+    });
+
+    Route::controller(DecisionController::class)->prefix('decision')->group( function(){
+        Route::get('/all','getAll')->name('decision.all');
+        Route::get('/create','create')->name('decision.create');
+        Route::post('/store','store')->name('decision.store');
+        Route::get('/edit/{id}','edit')->name('decision.edit');
+        Route::post('/update/{id}', 'update')->name('decision.update');
+        Route::get('/delete/{id}', 'delete')->name('decision.delete');
+    });
+
+    Route::controller(StaffController::class)->prefix('staff')->group( function(){
+        Route::get('/all','getAll')->name('staff.all');
+        Route::get('/create','create')->name('staff.create');
+        Route::post('/store','store')->name('staff.store');
+        Route::get('/edit/{id}','edit')->name('staff.edit');
+        Route::post('/update/{id}', 'update')->name('staff.update');
+        Route::get('/delete/{id}', 'delete')->name('staff.delete');
+    });
+
+    Route::controller(PageController::class)->prefix('page')->group( function(){
+        Route::get('/all','getAll')->name('page.all');
+        Route::get('/create','create')->name('page.create');
+        Route::post('/store','store')->name('page.store');
+        Route::get('/edit/{id}','edit')->name('page.edit');
+        Route::post('/update/{id}', 'update')->name('page.update');
+        Route::get('/delete/{id}', 'delete')->name('page.delete');
+    });
+
+    Route::controller(VacancyController::class)->prefix('vacancy')->group( function(){
+        Route::get('/all','getAll')->name('vacancy.all');
+        Route::get('/create','create')->name('vacancy.create');
+        Route::post('/store','store')->name('vacancy.store');
+        Route::get('/edit/{id}','edit')->name('vacancy.edit');
+        Route::post('/update/{id}', 'update')->name('vacancy.update');
+        Route::get('/delete/{id}', 'delete')->name('vacancy.delete');
     });
 
 });

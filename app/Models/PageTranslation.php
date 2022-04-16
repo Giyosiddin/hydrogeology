@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class PageTranslation extends Model
 {
     use HasFactory;
+
+    public $guarded = [];
+
+    public $timestamps = false;
 }

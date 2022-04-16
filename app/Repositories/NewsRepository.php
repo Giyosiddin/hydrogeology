@@ -13,7 +13,6 @@ class NewsRepository
     {
         $news = News::with(['translations' => function($query){
             $query->where('locale','uz');
-            // $query->first();
         }])->paginate(15);
         return view('admin.news.all', compact('news'));
     }
@@ -55,19 +54,11 @@ class NewsRepository
 		}
         $news->save();
         $request->collect(['uz','ru','en'])->each(function ($item, $key) use($news) {
-            $trans_update = $news->translations()->where('locale',$key)->update([
+            $news->translations()->where('locale',$key)->update([
                 'title' => $item['title'],
                 'description' => $item['description'],
                 'body' => $item['body']
             ]);
-            // dump($trans_update);
-            // dd($item);
-            // $news->translations()->update([
-            //     'locale' => $key,
-            //     'title' => $item['title'],
-            //     'description' => $item['description'],
-            //     'body' => $item['body']
-            // ]);
         });
         return back()->with(['msg' => "News updated successfully!"]);
     }

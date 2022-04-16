@@ -20,7 +20,7 @@ class CreateStaffTranslationsTable extends Migration
             $table->string('locale');
             $table->string('fullname');
             $table->string('position');
-            $table->mediumText('description')->nullable();
+            $table->longText('description')->nullable();
         });
     }
 

@@ -39,7 +39,6 @@ class NewsController extends Controller
 
     public function update(NewsRequest $request, $id)
     {
-        // dd($request->all());
         return $this->newsRepository->update($request, $id);
     }
     public function delete($id)
