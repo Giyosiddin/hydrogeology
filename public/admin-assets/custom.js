@@ -67,3 +67,16 @@ $('a.delete_file').on('click', function(e){
 //     }
 //     // console.log(role);
 // })
+$(function() {
+    $('.form-group.'+$('.type_gallary').val()).show();
+    $('.type_gallary').change(function(){
+        // alert($(this).val());
+        if($('.type_gallary').val() == 'image') {
+            $('.form-group.image').show();
+            $('.form-group.video').hide();
+        } else {
+            $('.form-group.image').hide();
+            $('.form-group.video').show();
+        }
+    });
+});

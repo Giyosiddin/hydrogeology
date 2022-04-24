@@ -9,13 +9,13 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Edit staff </h1>
+            <h1>Edit vacancy </h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{route('dashboard.index')}}">Home</a></li>
-              <li class="breadcrumb-item"><a href="{{route('staff.all')}}">Staff</a></li>
-              <li class="breadcrumb-item active">Edit staff </li>
+              <li class="breadcrumb-item"><a href="{{route('vacancy.all')}}">Vacancy</a></li>
+              <li class="breadcrumb-item active">Edit vacancy </li>
             </ol>
           </div>
         </div>

@@ -73,4 +73,21 @@ Route::middleware('check.admin')->prefix('dashboard')->namespace('Admin')->group
         Route::get('/delete/{id}', 'delete')->name('vacancy.delete');
     });
 
+    Route::controller(GallaryController::class)->prefix('gallary')->group( function(){
+        Route::get('/all','getAll')->name('gallary.all');
+        Route::get('/create','create')->name('gallary.create');
+        Route::post('/store','store')->name('gallary.store');
+        Route::get('/edit/{id}','edit')->name('gallary.edit');
+        Route::post('/update/{id}', 'update')->name('gallary.update');
+        Route::get('/delete/{id}', 'delete')->name('gallary.delete');
+    });
+    Route::controller(UsefulResourceController::class)->prefix('usefull-resources')->group( function(){
+        Route::get('/all','getAll')->name('usefull.all');
+        Route::get('/create','create')->name('usefull.create');
+        Route::post('/store','store')->name('usefull.store');
+        Route::get('/edit/{id}','edit')->name('usefull.edit');
+        Route::post('/update/{id}', 'update')->name('usefull.update');
+        Route::get('/delete/{id}', 'delete')->name('usefull.delete');
+    });
+
 });

@@ -14,8 +14,9 @@ class NewsFactory extends Factory
     public function definition()
     {
         return [
-            'view' => $this->rand(1,50),
+            'views' => rand(1,50),
             'image' => null,
+            'slug' => 'test'.rand(1,100)
         ];
     }
 

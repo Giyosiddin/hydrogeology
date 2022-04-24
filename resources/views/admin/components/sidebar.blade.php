@@ -82,51 +82,24 @@
             </a>
           </li>
            <li class="nav-item">
-            <a href="{{route('vacancy.all')}}" class="nav-link">
-                <i class="nav-icon fas fa-list-alt "></i>
-                <p>
-                Vacancies
-                </p>
-            </a>
-            </li>
-            <li class="nav-item">
-            <a href="#('course.index')}}" class="nav-link">
-                <i class="fas fa-chalkboard-teacher nav-icon"></i>
-                <p>Courses</p>
-            </a>
-            </li>
-            {{-- <li class="nav-item">
-            <a href="#('lesson.index')}}" class="nav-link">
-                <i class="fas fa-laptop-code nav-icon"></i>
-                <p>Lessons</p>
-            </a>
-            </li> --}}
-            <li class="nav-item">
-            <a href="#('admin.exams')}}" class="nav-link">
-                <i class="fas fa-laptop-code nav-icon"></i>
-                <p>Exams</p>
-            </a>
+                <a href="{{route('vacancy.all')}}" class="nav-link">
+                    <i class="nav-icon fas fa-list-alt "></i>
+                    <p>
+                    Vacancies
+                    </p>
+                </a>
             </li>
           <li class="nav-item">
-            <a href="#('admin.testimonials')}}" class="nav-link">
-              <i class="nav-icon fa fa-quote-left"></i>
+            <a href="{{route('gallary.all')}}" class="nav-link">
+              <i class="nav-icon fas fa-image"></i>
               <p>
-                Testimonials
+                Gallary
                 {{-- <span class="right badge badge-danger">New</span> --}}
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="#('admin.appels')}}" class="nav-link">
-              <i class="nav-icon fas fa-phone"></i>
-              <p>
-                Appels
-                {{-- <span class="right badge badge-danger">New</span> --}}
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#('admin.users')}}" class="nav-link">
+            <a href="{{route('usefull.all')}}" class="nav-link">
               <i class="nav-icon fas fa-users"></i>
               <p>
                 Users

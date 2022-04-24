@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\NewsController;
 use App\Http\Resources\NewsResource;
 use App\Models\News;
 use Illuminate\Http\Request;
@@ -20,6 +21,12 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::get('/news', function(){
-    return NewsResource::collection(News::with('translations')->paginate(1));
-});
+Route::get('/news', 'Api\NewsController@all');
+Route::get('/news/{slug}','Api\NewsController@getBySlug');
+Route::get('/decisions', 'Api\DecisionController@all');
+Route::get('/decision/{slug}', 'Api\DecisionController@getBySlug');
+Route::get('/staff', 'Api\StaffController@all');
+Route::get('/staff/{id}', 'Api\StaffController@getById');
+
+Route::get('/vacancy', 'Api\VacancyController@all');
+Route::get('/vacancy/{id}', 'Api\VacancyController@getById');
