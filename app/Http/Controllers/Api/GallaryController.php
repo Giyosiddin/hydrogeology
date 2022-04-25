@@ -5,18 +5,26 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Gallary;
 use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\JsonResource;
 
 class GallaryController extends Controller
 {
-    public function images()
+    protected $perPage = 15;
+    public function images(Request $request)
     {
-        $images = Gallary::where('type_gallary','image')->get()->toArray();
-        return $images;
+        if($request->input('per_page')){
+            $this->perPage = $request->per_page;
+        }
+        $images = Gallary::where('type_gallary','image')->paginate($this->per_page);
+        return new JsonResource($images);
     }
 
-    public function videos()
+    public function videos(Request $request)
     {
-        $videos = Gallary::where('type_gallary','video')->get()->toArray();
-        return $videos;
+        if($request->input('per_page')){
+            $this->perPage = $request->per_page;
+        }
+        $videos = Gallary::where('type_gallary','video')->paginate($this->per_page);
+        return  new JsonResource($videos);
     }
 }
