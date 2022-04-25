@@ -100,9 +100,9 @@
           </li>
           <li class="nav-item">
             <a href="{{route('usefull.all')}}" class="nav-link">
-              <i class="nav-icon fas fa-users"></i>
+              <i class="nav-icon fas fa-file"></i>
               <p>
-                Users
+                Usefull resources
                 {{-- <span class="right badge badge-danger">New</span> --}}
               </p>
             </a>

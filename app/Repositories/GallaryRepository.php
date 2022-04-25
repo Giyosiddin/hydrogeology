@@ -8,7 +8,7 @@ class GallaryRepository
     public function all()
     {
         $gallaries = Gallary::paginate(15);
-        return view('admin.gallary.all', compact('gallaries'));
+        return view('admin.gallaries.all', compact('gallaries'));
     }
 
     public function store($request)

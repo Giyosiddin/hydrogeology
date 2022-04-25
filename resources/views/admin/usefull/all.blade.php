@@ -9,12 +9,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-      		<h1>Staff</h1>
+      		<h1>Usefull resources</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{route('dashboard.index')}}">Home</a></li>
-              <li class="breadcrumb-item active">Staff</li>
+              <li class="breadcrumb-item active">Usefull resources</li>
             </ol>
           </div>
         </div>
@@ -39,10 +39,10 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Staff</h3>
+          <h3 class="card-title">Usefull resources</h3>
 
           <div class="card-tools">
-            <a href="{{route('staff.create')}}" class="btn btn-block btn-success btn-flat"> Add post</a>
+            <a href="{{route('usefull.create')}}" class="btn btn-block btn-success btn-flat"> Add post</a>
           </div>
         </div>
         <div class="card-body p-0">
@@ -53,13 +53,10 @@
                           #
                       </th>
                       <th style="width: 20%">
-                         FullName
+                         Name
                       </th>
                       <th style="width: 18%" class="text-center">
-                          Position
-                      </th>
-                      <th style="width: 20%">
-                          Excerpt
+                          Url
                       </th>
                       <th>
                           Photo
@@ -69,17 +66,13 @@
                   </tr>
               </thead>
               <tbody>
-                  @foreach($staff as $post)
+                  @foreach($resources as $post)
                   <tr>
                       <td>
                           #
                       </td>
                       <td>
-                         @foreach ($post->translations as $translation)
-                          <a>
-                              {{$translation->fullname}}
-                          </a>
-                           @endforeach
+                          {{$post->name}}
                           <br/>
                           <small>
                               Created {{$post->created_at}}
@@ -87,18 +80,11 @@
                       </td>
                       <td>
                           <div>
-                              <strong>{{$post->position }}</strong>
+                              <strong>{{$post->url }}</strong>
                           </div>
                       </td>
-                      <td class="project_progress">
-                          <p style="max-width: 500px">
-                               @foreach ($post->translations as $translation)
-                                  {{$translation->description}}
-                              @endforeach
-                          </p>
-                      </td>
                       <td class="project-state">
-                          <img src="{{\Storage::url($post->image)}}" width="200px" alt="">
+                          <img src="{{\Storage::url($post->icon)}}" width="200px" alt="">
                       </td>
                       <td class="project-actions text-right">
                           {{-- <a class="btn btn-primary btn-sm" href="{{route('news.show', $post->id)}}">
@@ -106,12 +92,12 @@
                               </i>
                               View
                           </a> --}}
-                          <a class="btn btn-info btn-sm" href="{{route('staff.edit', $post->id)}}">
+                          <a class="btn btn-info btn-sm" href="{{route('usefull.edit', $post->id)}}">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
                           </a>
-                          <a class="btn btn-danger btn-sm" href="{{route('staff.delete', $post->id)}}">
+                          <a class="btn btn-danger btn-sm" href="{{route('usefull.delete', $post->id)}}">
                               <i class="fas fa-trash">
                               </i>
                               Delete

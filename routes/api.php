@@ -27,6 +27,9 @@ Route::get('/decisions', 'Api\DecisionController@all');
 Route::get('/decision/{slug}', 'Api\DecisionController@getBySlug');
 Route::get('/staff', 'Api\StaffController@all');
 Route::get('/staff/{id}', 'Api\StaffController@getById');
-
+Route::get('/page/{slug}', 'Api\PageController@getBySlug');
 Route::get('/vacancy', 'Api\VacancyController@all');
 Route::get('/vacancy/{id}', 'Api\VacancyController@getById');
+Route::get('/gallary/images', 'Api\GallaryController@images');
+Route::get('/gallary/videos', 'Api\GallaryController@videos');
+Route::get('/resources', 'Api\UsefullResourceController@resources');

@@ -10,18 +10,29 @@ use Illuminate\Http\Request;
 class DecisionController extends Controller
 {
     protected $per_page = 15;
+    protected $locale = 'uz';
     public function all(Request $request)
     {
         if($request->per_page){
             $this->per_page = $request->per_page;
         }
-        $vacancies = Decision::with('translations')->paginate($this->per_page);
-        return DecisionResource::collection($vacancies);
+        if($request->lang){
+            $this->locale = $request->lang;
+        }
+        $decisions = Decision::with(['translations' => function($query){
+            $query->where('locale', '=', $this->locale);
+        }])->paginate($this->per_page);
+        return DecisionResource::collection($decisions);
     }
 
-    public function getBySlug($slug)
+    public function getBySlug(Request $request, $slug)
     {
-        $vacancy = Decision::whereSlug($slug)->with('translations')->firstOrFail();
-        return new DecisionResource($vacancy);
+        if($request->lang){
+            $this->locale = $request->lang;
+        }
+        $decision = Decision::whereSlug($slug)->with('translations', function($query){
+            $query->where('locale', '=', $this->locale);
+        })->firstOrFail();
+        return new DecisionResource($decision);
     }
 }

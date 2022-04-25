@@ -10,19 +10,30 @@ use Illuminate\Http\Resources\Json\JsonResource;
 class StaffController extends Controller
 {
     protected $per_page = 15;
+    protected $locale = 'uz';
 
     public function all(Request $request)
     {
         if($request->per_page){
             $this->per_page = $request->per_page;
         }
-        $vacancies = Staff::with('translations')->paginate($this->per_page);
+        if($request->lang){
+            $this->locale = $request->lang;
+        }
+        $vacancies = Staff::with(['translations' => function($query){
+            $query->where('locale', '=', $this->locale);
+        }])->paginate($this->per_page);
         return JsonResource::collection($vacancies);
     }
 
-    public function getById($id)
+    public function getById(Request $request, $id)
     {
-        $vacancy = Staff::with('translations')->findOrFail($id);
+        if($request->lang){
+            $this->locale = $request->lang;
+        }
+        $vacancy = Staff::with(['translations' => function($query){
+            $query->where('locale', '=', $this->locale);
+        }])->findOrFail($id);
         return new JsonResource($vacancy);
     }
 }
