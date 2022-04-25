@@ -15,7 +15,7 @@ class GallaryController extends Controller
         if($request->input('per_page')){
             $this->perPage = $request->per_page;
         }
-        $images = Gallary::where('type_gallary','image')->paginate($this->per_page);
+        $images = Gallary::where('type_gallary','image')->paginate($this->perPage);
         return new JsonResource($images);
     }
 
@@ -24,7 +24,7 @@ class GallaryController extends Controller
         if($request->input('per_page')){
             $this->perPage = $request->per_page;
         }
-        $videos = Gallary::where('type_gallary','video')->paginate($this->per_page);
+        $videos = Gallary::where('type_gallary','video')->paginate($this->perPage);
         return  new JsonResource($videos);
     }
 }
