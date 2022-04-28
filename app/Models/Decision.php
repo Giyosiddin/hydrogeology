@@ -4,12 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Decision extends Model
 {
     use HasFactory;
 
     protected $guarded = ['*'];
+
+    protected $appends = ['imageUrl'];
+
+    public function getImageUrlAttribute()
+    {
+        return Storage::url($this->image);
+    }
 
     public function translations()
     {

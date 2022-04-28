@@ -2,13 +2,17 @@
 
 namespace App\Models;
 
+// use Illuminate\Contracts\Cache\Store;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class News extends Model
 {
     use HasFactory;
+
+    protected $appends = ['imageUrl'];
 
     // protected $guarded;
     protected $fillable = [
@@ -29,6 +33,11 @@ class News extends Model
                 $translation->delete();
              });
         });
+    }
+
+    public function getImageUrlAttribute()
+    {
+        return Storage::url($this->image);
     }
 
 }
