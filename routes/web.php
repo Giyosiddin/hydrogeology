@@ -89,5 +89,21 @@ Route::middleware('check.admin')->prefix('dashboard')->namespace('Admin')->group
         Route::post('/update/{id}', 'update')->name('usefull.update');
         Route::get('/delete/{id}', 'delete')->name('usefull.delete');
     });
+    Route::controller(MenuController::class)->prefix('menus')->group( function(){
+        Route::get('/all','getAll')->name('menu.all');
+        Route::get('/create','create')->name('menu.create');
+        Route::post('/store','store')->name('menu.store');
+        Route::get('/edit/{id}','edit')->name('menu.edit');
+        Route::post('/update/{id}', 'update')->name('menu.update');
+        Route::get('/delete/{id}', 'delete')->name('menu.delete');
+
+        /* Menu items routes  */
+        Route::get('/{menu_id}/all-items','getAllItems')->name('menuItem.all');
+        Route::get('/{menu_id}/create-item','createItem')->name('menuItem.create');
+        Route::post('/{menu_id}/store-item','storeItem')->name('menuItem.store');
+        Route::get('/{menu_id}/edit-item/{item_id}','editItem')->name('menuItem.edit');
+        Route::post('/{menu_id}/update-item/{item_id}', 'updateItem')->name('menuItem.update');
+        Route::get('/{menu_id}/delete-item/{item_id}', 'deleteItem')->name('menuItem.delete');
+    });
 
 });

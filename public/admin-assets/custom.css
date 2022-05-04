@@ -13,12 +13,12 @@
     /* width: 200px; */
     /* margin-top: 10px; */
   }
-  
+
   .dropzone.hover {
     border: 10px solid #FE5;
     color: #FE5;
   }
-  
+
   .dropzone div {
     position: absolute;
     /* color: #222; */
@@ -27,14 +27,14 @@
     bottom: 0;
     left: 0;
   }
-  
+
   .dropzone img {
     border-radius: 10px;
     vertical-align: baseline;
     max-width: 95%;
     max-height: 95%;
   }
-  
+
   .dropzone [type="file"] {
     cursor: pointer;
     position: absolute;
@@ -74,3 +74,8 @@ li.nav-item ul.nav.nav-treeview {
 .img {
     position: relative;
 } */
+ul.list-group li div {
+    display: inline;
+    /* border: 1px solid #ddd !important; */
+    padding: 10px 8%;
+}

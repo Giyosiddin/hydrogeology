@@ -105,7 +105,7 @@
               </div>
               <div class="form-group">
                 <label for="inputStatus">Slug</label>
-                <input type="text" name="slug" class="form-control">
+                <input type="text" name="slug" disabled class="form-control">
               </div>
               <div class="form-group">
                 <input type="submit" value="Add page" class="btn btn-success float-right">

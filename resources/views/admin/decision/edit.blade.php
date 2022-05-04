@@ -107,7 +107,7 @@
               </div>
                 <div class="form-group">
                   <label for="inputStatus">Slug</label>
-                  <input type="text" name="slug" value="{{$post->slug}}" class="form-control">
+                  <input type="text" disabled name="slug" value="{{$post->slug}}" class="form-control">
                 </div>
               <div class="form-group">
                 <label for="">Number decision</label>

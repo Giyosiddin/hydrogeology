@@ -107,7 +107,7 @@
               </div>
                 <div class="form-group">
                   <label for="inputStatus">Slug</label>
-                  <input type="text" name="slug" value="{{$post->slug}}" class="form-control">
+                  <input type="text" name="slug" disabled value="{{$post->slug}}" class="form-control">
                 </div>
               <div class="form-group">
                 <input type="submit" value="Update page" class="btn btn-success float-right">
