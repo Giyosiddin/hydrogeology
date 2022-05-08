@@ -42,7 +42,7 @@
           <h3 class="card-title">Usefull resources</h3>
 
           <div class="card-tools">
-            <a href="{{route('usefull.create')}}" class="btn btn-block btn-success btn-flat"> Add post</a>
+            <a href="{{route('usefull.create')}}" class="btn btn-block btn-success btn-flat"> Add resource</a>
           </div>
         </div>
         <div class="card-body p-0">
@@ -66,38 +66,38 @@
                   </tr>
               </thead>
               <tbody>
-                  @foreach($resources as $post)
+                  @foreach($resources as $resource)
                   <tr>
                       <td>
                           #
                       </td>
                       <td>
-                          {{$post->name}}
+                          {{$resource->name}}
                           <br/>
                           <small>
-                              Created {{$post->created_at}}
+                              Created {{$resource->created_at}}
                           </small>
                       </td>
                       <td>
                           <div>
-                              <strong>{{$post->url }}</strong>
+                              <strong>{{$resource->url }}</strong>
                           </div>
                       </td>
                       <td class="project-state">
-                          <img src="{{\Storage::url($post->icon)}}" width="200px" alt="">
+                          <img src="{{\Storage::url($resource->icon)}}" width="200px" alt="">
                       </td>
                       <td class="project-actions text-right">
-                          {{-- <a class="btn btn-primary btn-sm" href="{{route('news.show', $post->id)}}">
+                          {{-- <a class="btn btn-primary btn-sm" href="{{route('news.show', $resource->id)}}">
                               <i class="fas fa-folder">
                               </i>
                               View
                           </a> --}}
-                          <a class="btn btn-info btn-sm" href="{{route('usefull.edit', $post->id)}}">
+                          <a class="btn btn-info btn-sm" href="{{route('usefull.edit', $resource->id)}}">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
                           </a>
-                          <a class="btn btn-danger btn-sm" href="{{route('usefull.delete', $post->id)}}">
+                          <a class="btn btn-danger btn-sm" href="{{route('usefull.delete', $resource->id)}}">
                               <i class="fas fa-trash">
                               </i>
                               Delete

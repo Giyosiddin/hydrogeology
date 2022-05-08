@@ -23,10 +23,11 @@ class DecisionRepository
         // dd($this->createdSlug(Decision::class, $request->uz['title']));
         $decision->slug = $this->createdSlug(Decision::class, $request->uz['title']);
         $decision->number_decision = $request->number_decision ? $request->number_decision : '';
-        if($request->hasFile('image')){
-			$image = $request->file('image')->store('public/decision');
-			$decision->image = $image;
-		}
+        // Upload image
+        // if($request->hasFile('image')){
+		// 	$image = $request->file('image')->store('public/decision');
+		// 	$decision->image = $image;
+		// }
         $decision->save();
         $request->collect(['uz','ru','en'])->each(function ($item, $key) use($decision) {
             $decision->translations()->create([
@@ -36,7 +37,7 @@ class DecisionRepository
                 'body' => $item['body']
             ]);
         });
-       return redirect()->route('decision.edit',$decision->id)->with(['msg' => "Post saved successfully!"]);
+       return redirect()->route('decision.all')->with(['msg' => "Post saved successfully!"]);
     }
 
     public function edit($id)
@@ -48,15 +49,15 @@ class DecisionRepository
     public function update($request, $id)
     {
         $decision = Decision::findOrFail($id);
-        $decision->slug = $request->slug;
-        if($request->hasFile('image')){
-			$image = $request->file('image')->store('public/decision');
-			$decision->image = $image;
-		}else{
-			$decision->image = $request->delete_image;
-		}
+        // $decision->slug = $request->slug;
+
+        // if($request->hasFile('image')){
+		// 	$image = $request->file('image')->store('public/decision');
+		// 	$decision->image = $image;
+		// }else{
+		// 	$decision->image = $request->delete_image;
+		// }
         $decision->number_decision = $request->number_decision ? $request->number_decision :'';
-        // dd($decision->number_decision);
         $decision->save();
         $request->collect(['uz','ru','en'])->each(function ($item, $key) use($decision) {
             $decision->translations()->where('locale',$key)->update([

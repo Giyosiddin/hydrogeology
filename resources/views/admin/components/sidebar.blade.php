@@ -35,7 +35,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
+            <a href="#" class="nav-link {{  request()->routeIs('dashboard.index') ? 'active' : '' }}">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -45,26 +45,23 @@
           </li>
 
           <li class="nav-item">
-            <a href="{{ route('page.all')}}" class="nav-link">
+            <a href="{{ route('page.all')}}" class="nav-link {{ request()->routeIs('page.*') ? 'active' : '' }}">
               <i class="nav-icon fas fa-pager"></i>
               <p>
                 Pages
-                {{-- <span class="right badge badge-danger">New</span> --}}
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('news.all')}}" class="nav-link">
+            <a href="{{ route('news.all')}}" class="nav-link {{ request()->routeIs('news.*') ? 'active' : '' }}">
               <i class="nav-icon fas fa-newspaper"></i>
-              {{-- <i class="nav-icon fas fa-calendar-alt"></i> --}}
               <p>
                 News
-                <!-- <span class="badge badge-info right">2</span> -->
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('decision.all')}}" class="nav-link">
+            <a href="{{ route('decision.all')}}" class="nav-link {{ request()->routeIs('decision.*') ? 'active' : '' }}">
               <i class="nav-icon fas fa-book"></i>
               <p>
                 Decision
@@ -73,16 +70,15 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{route('staff.all')}}" class="nav-link">
+            <a href="{{route('staff.all')}}" class="nav-link {{ request()->routeIs('staff.*') ? 'active' : '' }}">
               <i class="nav-icon fas fa-users"></i>
               <p>
                 Staff
-                {{-- <i class="fas fa-angle-left right"></i> --}}
               </p>
             </a>
           </li>
            <li class="nav-item">
-                <a href="{{route('vacancy.all')}}" class="nav-link">
+                <a href="{{route('vacancy.all')}}" class="nav-link {{ request()->routeIs('vacancy.*') ? 'active' : '' }}">
                     <i class="nav-icon fas fa-list-alt "></i>
                     <p>
                     Vacancies
@@ -90,16 +86,15 @@
                 </a>
             </li>
           <li class="nav-item">
-            <a href="{{route('gallary.all')}}" class="nav-link">
+            <a href="{{route('gallary.all')}}" class="nav-link {{ request()->routeIs('gallary.*') ? 'active' : '' }}">
               <i class="nav-icon fas fa-image"></i>
               <p>
                 Gallary
-                {{-- <span class="right badge badge-danger">New</span> --}}
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{route('usefull.all')}}" class="nav-link">
+            <a href="{{route('usefull.all')}}" class="nav-link {{ request()->routeIs('usefull.*') ? 'active' : '' }}">
               <i class="nav-icon fas fa-file"></i>
               <p>
                 Usefull resources
@@ -108,11 +103,10 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{route('menu.all')}}" class="nav-link">
+            <a href="{{route('menu.all')}}" class="nav-link {{ request()->routeIs('menu.*') ? 'active' : '' }}">
              <i class="nav-icon fas fa-bars"></i>
               <p>
                 Menu
-                {{-- <span class="right badge badge-danger">New</span> --}}
               </p>
             </a>
           </li>

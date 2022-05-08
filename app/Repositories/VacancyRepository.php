@@ -36,7 +36,7 @@ class VacancyRepository
                 'body' => $item['body']
             ]);
         });
-       return redirect()->route('vacancy.edit',$vacancy->id)->with(['msg' => "Post saved successfully!"]);
+       return redirect()->route('vacancy.all')->with(['msg' => "Post saved successfully!"]);
     }
 
     public function edit($id)

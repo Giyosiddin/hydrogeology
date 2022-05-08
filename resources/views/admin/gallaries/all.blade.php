@@ -42,67 +42,26 @@
           <h3 class="card-title">Gallaries</h3>
 
           <div class="card-tools">
-            <a href="{{route('gallary.create')}}" class="btn btn-block btn-success btn-flat"> Add post</a>
+            <a href="{{route('gallary.create')}}" class="btn btn-block btn-success btn-flat"> Add gallary</a>
           </div>
         </div>
         <div class="card-body p-0">
-          <table class="table table-striped projects">
-              <thead>
-                  <tr>
-                      <th style="width: 1%">
-                          #
-                      </th>
-                      <th style="width: 20%">
-                         Photo
-                      </th>
-                      <th style="width: 18%" class="text-center">
-                          Type gallary
-                      </th>
-                      <th style="width: 20%">
-                      </th>
-                  </tr>
-              </thead>
-              <tbody>
-                  @foreach($gallaries as $post)
-                  <tr>
-                      <td>
-                          #
-                      </td>
-                      <td class="project-state">
-                          @if($post->type_gallary == 'image')
-                              <img src="{{\Storage::url($post->url)}}" width="200px" alt="">
-                          @else
-                              {{$post->url}}
-                          @endif
-                      </td>
-                      <td>
-                         {{$post->type_gallary}}
-                          <br/>
-                          <small>
-                              Created {{$post->created_at}}
-                          </small>
-                      </td>
-                      <td class="project-actions text-right">
-                          {{-- <a class="btn btn-primary btn-sm" href="{{route('.show', $post->id)}}">
-                              <i class="fas fa-folder">
-                              </i>
-                              View
-                          </a> --}}
-                          <a class="btn btn-info btn-sm" href="{{route('gallary.edit', $post->id)}}">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="{{route('gallary.delete', $post->id)}}">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </a>
-                      </td>
-                  </tr>
-                  @endforeach
-              </tbody>
-          </table>
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="images-tab" data-toggle="tab" href="#images" role="tab" aria-controls="images" aria-selected="true">Images</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="videos-tab" data-toggle="tab" href="#videos" role="tab" aria-controls="videos" aria-selected="false">Videos</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="images" role="tabpanel" aria-labelledby="images-tab">
+                    @include('admin.components.galllert-table', ['gallaries' =>  $image_gallaries])
+                </div>
+                <div class="tab-pane fade" id="videos" role="tabpanel" aria-labelledby="videos-tab">
+                     @include('admin.components.galllert-table', ['gallaries' =>  $video_gallaries])
+                </div>
+            </div>
         </div>
         <!-- /.card-body -->
       </div>

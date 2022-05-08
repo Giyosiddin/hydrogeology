@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\DecisionResource;
 use App\Models\Decision;
 use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\JsonResource;
 
 class DecisionController extends Controller
 {
@@ -22,7 +23,7 @@ class DecisionController extends Controller
         $decisions = Decision::with(['translations' => function($query){
             $query->where('locale', '=', $this->locale);
         }])->paginate($this->per_page);
-        return DecisionResource::collection($decisions);
+        return JsonResource::collection($decisions);
     }
 
     public function getBySlug(Request $request, $slug)
@@ -33,6 +34,6 @@ class DecisionController extends Controller
         $decision = Decision::whereSlug($slug)->with('translations', function($query){
             $query->where('locale', '=', $this->locale);
         })->firstOrFail();
-        return new DecisionResource($decision);
+        return new JsonResource($decision);
     }
 }

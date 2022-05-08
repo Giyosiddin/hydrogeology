@@ -42,7 +42,7 @@
           <h3 class="card-title">Vacancy</h3>
 
           <div class="card-tools">
-            <a href="{{route('vacancy.create')}}" class="btn btn-block btn-success btn-flat"> Add post</a>
+            <a href="{{route('vacancy.create')}}" class="btn btn-block btn-success btn-flat"> Add vacancy</a>
           </div>
         </div>
         <div class="card-body p-0">
@@ -52,13 +52,13 @@
                       <th style="width: 1%">
                           #
                       </th>
-                      <th style="width: 18%" class="text-center">
+                      <th>
                           Position
                       </th>
                       <th style="width: 20%">
                           Excerpt
                       </th>
-                      <th>
+                      <th style="width: 10%">
                           Photo
                       </th>
                       <th style="width: 20%">
@@ -69,49 +69,53 @@
                   </tr>
               </thead>
               <tbody>
-                  @foreach($vacancies as $post)
+                  @foreach($vacancies as $vacancy)
                   <tr>
                       <td>
                           #
                       </td>
                       <td>
-                         @foreach ($post->translations as $translation)
+                         @foreach ($vacancy->translations as $translation)
                           <a>
                               {{$translation->position}}
                           </a>
                            @endforeach
                           <br/>
                           <small>
-                              Created {{$post->created_at}}
+                              Created {{$vacancy->created_at}}
                           </small>
                       </td>
                       <td class="project_progress">
                           <p style="max-width: 500px">
-                               @foreach ($post->translations as $translation)
+                               @foreach ($vacancy->translations as $translation)
                                   {{$translation->description}}
                               @endforeach
                           </p>
                       </td>
                       <td class="project-state">
-                          <img src="{{\Storage::url($post->image)}}" width="200px" alt="">
+                          <img src="{{\Storage::url($vacancy->image)}}" width="100px" alt="">
                       </td>
                       <td>
                           <div>
-                              <strong>{{$post->position }}</strong>
+                              @if($vacancy->active ==1)
+                              <i class="fa fa-fw fa-check"></i>
+                              @else
+                                <i class="fa fa-fw fa-remove"></i>
+                              @endif
                           </div>
                       </td>
                       <td class="project-actions text-right">
-                          {{-- <a class="btn btn-primary btn-sm" href="{{route('news.show', $post->id)}}">
+                          {{-- <a class="btn btn-primary btn-sm" href="{{route('news.show', $vacancy->id)}}">
                               <i class="fas fa-folder">
                               </i>
                               View
                           </a> --}}
-                          <a class="btn btn-info btn-sm" href="{{route('vacancy.edit', $post->id)}}">
+                          <a class="btn btn-info btn-sm" href="{{route('vacancy.edit', $vacancy->id)}}">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
                           </a>
-                          <a class="btn btn-danger btn-sm" href="{{route('vacancy.delete', $post->id)}}">
+                          <a class="btn btn-danger btn-sm" href="{{route('vacancy.delete', $vacancy->id)}}">
                               <i class="fas fa-trash">
                               </i>
                               Delete

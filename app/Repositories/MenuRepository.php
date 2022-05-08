@@ -23,7 +23,7 @@ class MenuRepository
         $resource->name = $request->name;
         $resource->location = $request->location;
         $resource->save();
-       return redirect()->route('menu.edit',$resource->id)->with(['msg' => "Post saved successfully!"]);
+       return redirect()->route('menuItem.all',$resource->id)->with(['msg' => "Menu created successfully!"]);
     }
 
     public function edit($id)
@@ -39,7 +39,7 @@ class MenuRepository
         $resource->name = $request->name;
         $resource->location = $request->location;
         $resource->save();
-        return back()->with(['msg' => "Usefull Resource updated successfully!"]);
+        return back()->with(['msg' => "Menu updated successfully!"]);
     }
 
     public function delete($id)
@@ -69,7 +69,7 @@ class MenuRepository
         $item = new MenuItem();
         $item = $item->create($data);
 
-        return redirect()->route('menuItem.edit', [$menu_id, $item->id]);
+        return redirect()->route('menuItem.all', $menu_id);
     }
 
     public function editItem($menu_id, $item_id)

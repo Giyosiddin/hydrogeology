@@ -42,7 +42,7 @@
           <h3 class="card-title">Pages</h3>
 
           <div class="card-tools">
-            <a href="{{route('page.create')}}" class="btn btn-block btn-success btn-flat"> Add post</a>
+            <a href="{{route('page.create')}}" class="btn btn-block btn-success btn-flat"> Add page</a>
           </div>
         </div>
         <div class="card-body p-0">
@@ -53,7 +53,7 @@
                           #
                       </th>
                       <th style="width: 20%">
-                         Post name
+                         Page name
                       </th>
                       <th style="width: 18%" class="text-center">
                           Slug
@@ -69,49 +69,49 @@
                   </tr>
               </thead>
               <tbody>
-                  @foreach($pages as $post)
+                  @foreach($pages as $page)
                   <tr>
                       <td>
                           #
                       </td>
                       <td>
-                         @foreach ($post->translations as $translation)
+                         @foreach ($page->translations as $translation)
                           <a>
                               {{$translation->title}}
                           </a>
                            @endforeach
                           <br/>
                           <small>
-                              Created {{$post->created_at}}
+                              Created {{$page->created_at}}
                           </small>
                       </td>
                       <td>
                           <div>
-                              <strong>{{$post->slug }}</strong>
+                              <strong>{{$page->slug }}</strong>
                           </div>
                       </td>
                       <td class="project_progress">
                           <p style="max-width: 500px">
-                               @foreach ($post->translations as $translation)
+                               @foreach ($page->translations as $translation)
                                   {{$translation->description}}
                               @endforeach
                           </p>
                       </td>
                       <td class="project-state">
-                          <img src="{{\Storage::url($post->image)}}" width="200px" alt="">
+                          <img src="{{\Storage::url($page->image)}}" width="200px" alt="">
                       </td>
                       <td class="project-actions text-right">
-                          {{-- <a class="btn btn-primary btn-sm" href="{{route('news.show', $post->id)}}">
+                          {{-- <a class="btn btn-primary btn-sm" href="{{route('news.show', $page->id)}}">
                               <i class="fas fa-folder">
                               </i>
                               View
                           </a> --}}
-                          <a class="btn btn-info btn-sm" href="{{route('page.edit', $post->id)}}">
+                          <a class="btn btn-info btn-sm" href="{{route('page.edit', $page->id)}}">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
                           </a>
-                          <a class="btn btn-danger btn-sm" href="{{route('page.delete', $post->id)}}">
+                          <a class="btn btn-danger btn-sm" href="{{route('page.delete', $page->id)}}">
                               <i class="fas fa-trash">
                               </i>
                               Delete

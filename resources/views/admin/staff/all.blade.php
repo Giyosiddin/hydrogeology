@@ -42,7 +42,7 @@
           <h3 class="card-title">Staff</h3>
 
           <div class="card-tools">
-            <a href="{{route('staff.create')}}" class="btn btn-block btn-success btn-flat"> Add post</a>
+            <a href="{{route('staff.create')}}" class="btn btn-block btn-success btn-flat"> Add staff</a>
           </div>
         </div>
         <div class="card-body p-0">
@@ -52,16 +52,13 @@
                       <th style="width: 1%">
                           #
                       </th>
-                      <th style="width: 20%">
+                      <th style="">
                          FullName
                       </th>
-                      <th style="width: 18%" class="text-center">
+                      <th style="">
                           Position
                       </th>
                       <th style="width: 20%">
-                          Excerpt
-                      </th>
-                      <th>
                           Photo
                       </th>
                       <th style="width: 20%">
@@ -87,16 +84,12 @@
                       </td>
                       <td>
                           <div>
-                              <strong>{{$post->position }}</strong>
+                            @foreach ($post->translations as $translation)
+                                 <strong>  {{$translation->position}}</strong>
+                              @endforeach
                           </div>
                       </td>
-                      <td class="project_progress">
-                          <p style="max-width: 500px">
-                               @foreach ($post->translations as $translation)
-                                  {{$translation->description}}
-                              @endforeach
-                          </p>
-                      </td>
+
                       <td class="project-state">
                           <img src="{{\Storage::url($post->image)}}" width="200px" alt="">
                       </td>

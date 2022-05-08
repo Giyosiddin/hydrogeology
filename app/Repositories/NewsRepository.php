@@ -34,7 +34,7 @@ class NewsRepository
                 'body' => $item['body']
             ]);
         });
-       return redirect()->route('news.edit',$news->id)->with(['msg' => "Post saved successfully!"]);
+       return redirect()->route('news.all')->with(['msg' => "Post saved successfully!"]);
     }
 
     public function edit($id)

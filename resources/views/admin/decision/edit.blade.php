@@ -14,7 +14,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{route('dashboard.index')}}">Home</a></li>
-              <li class="breadcrumb-item"><a href="{{route('decision.all')}}">Decision</a></li>
+              <li class="breadcrumb-item"><a href="{{route('decision.all')}}">All decisions</a></li>
               <li class="breadcrumb-item active">Edit decision </li>
             </ol>
           </div>
@@ -94,7 +94,7 @@
               <h3 class="card-title">Others</h3>
             </div>
             <div class="card-body">
-              <div class="img"><a class=""><img src="{{\Storage::url($post->image)}}" alt=""></a></div>
+              {{-- <div class="img"><a class=""><img src="{{\Storage::url($post->image)}}" alt=""></a></div>
               <div class="form-group row" >
                 <div class="dropzone col mt-2">
                   <div><i class="fas fa-plus"></i> <span>Photo</span></div>
@@ -104,7 +104,7 @@
                 <div class="col mt-2 ">
                   <a href="#" class="btn btn-success w-100 pt-1 delete_file"><i class="fas fa-times"></i> <span>Delete</span></a>
                 </div>
-              </div>
+              </div> --}}
                 <div class="form-group">
                   <label for="inputStatus">Slug</label>
                   <input type="text" disabled name="slug" value="{{$post->slug}}" class="form-control">
@@ -114,7 +114,7 @@
                 <input type="text" name="number_decision" value="{{$post->number_decision}}" class="form-control">
               </div>
               <div class="form-group">
-                <input type="submit" value="Update post" class="btn btn-success float-right">
+                <input type="submit" value="Update decision" class="btn btn-success float-right">
               </div>
             </div>
             <!-- /.card-body -->

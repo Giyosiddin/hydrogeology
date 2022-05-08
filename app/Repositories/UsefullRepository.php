@@ -25,7 +25,7 @@ class UsefullRepository
         $resource->name = $request->name;
         $resource->url = $request->url;
         $resource->save();
-       return redirect()->route('usefull.edit',$resource->id)->with(['msg' => "Post saved successfully!"]);
+       return redirect()->route('usefull.all',)->with(['msg' => "Post saved successfully!"]);
     }
 
     public function edit($id)

@@ -7,18 +7,19 @@ class GallaryRepository
 {
     public function all()
     {
-        $gallaries = Gallary::paginate(15);
-        return view('admin.gallaries.all', compact('gallaries'));
+        $image_gallaries = Gallary::where('type_gallary', 'image')->paginate(15);
+        $video_gallaries = Gallary::where('type_gallary', 'video')->paginate(15);
+        return view('admin.gallaries.all', compact('image_gallaries','video_gallaries'));
     }
 
     public function store($request)
-    {;
+    {
         $gallary = new Gallary();
         if($request->hasFile('image')){
-            $gallary->url = $request->file('image')->store('public/gallary');
-        }else{
-            $gallary->url = $request->url;
+            $gallary->image = $request->file('image')->store('public/gallary');
         }
+
+        $gallary->url = $request->url;
         $gallary->type_gallary = $request->type_gallary;
 
         $gallary->save();
@@ -34,13 +35,10 @@ class GallaryRepository
     public function update($request, $id)
     {
         $gallary = Gallary::findOrFail($id);
-        if(empty($request->url) && $request->hasFile('image')){
-            $gallary->url = $request->file('image')->store('public/gallary');
-        }elseif(empty($request->url) && !empty($request->image)){
-            $gallary->url = $request->image;
-        }else{
-            $gallary->url = $request->url;
+        if($request->hasFile('image')){
+            $gallary->image = $request->file('image')->store('public/gallary');
         }
+        $gallary->url = $request->url;
         $gallary->type_gallary = $request->type_gallary;
 
         $gallary->save();

@@ -34,7 +34,7 @@ class PageRepository
                 'body' => $item['body']
             ]);
         });
-       return redirect()->route('page.edit',$page->id)->with(['msg' => "Post saved successfully!"]);
+       return redirect()->route('page.all')->with(['msg' => "Post saved successfully!"]);
     }
 
     public function edit($id)

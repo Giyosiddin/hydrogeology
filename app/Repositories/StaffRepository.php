@@ -36,7 +36,7 @@ class StaffRepository
                 'position' => $item['position']
             ]);
         });
-       return redirect()->route('staff.edit',$staff->id)->with(['msg' => "Post saved successfully!"]);
+       return redirect()->route('staff.all')->with(['msg' => "Post saved successfully!"]);
     }
 
     public function edit($id)

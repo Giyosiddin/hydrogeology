@@ -42,7 +42,7 @@
           <h3 class="card-title">Decisions</h3>
 
           <div class="card-tools">
-            <a href="{{route('decision.create')}}" class="btn btn-block btn-success btn-flat"> Add post</a>
+            <a href="{{route('decision.create')}}" class="btn btn-block btn-success btn-flat"> Add decision</a>
           </div>
         </div>
         <div class="card-body p-0">
@@ -52,66 +52,66 @@
                       <th style="width: 1%">
                           #
                       </th>
-                      <th style="width: 20%">
-                         Post name
+                      <th style="">
+                         Decision name
                       </th>
-                      <th style="width: 18%" class="text-center">
+                      <th style="width: 18%" >
                           Slug
                       </th>
                       <th style="width: 20%">
                           Excerpt
                       </th>
-                      <th>
-                          Photo
+                      <th style="width: 10%">
+                          Decision number
                       </th>
                       <th style="width: 20%">
                       </th>
                   </tr>
               </thead>
               <tbody>
-                  @foreach($decisions as $post)
+                  @foreach($decisions as $decision)
                   <tr>
                       <td>
                           #
                       </td>
                       <td>
-                         @foreach ($post->translations as $translation)
+                         @foreach ($decision->translations as $translation)
                           <a>
                               {{$translation->title}}
                           </a>
                            @endforeach
                           <br/>
                           <small>
-                              Created {{$post->created_at}}
+                              Created {{$decision->created_at}}
                           </small>
                       </td>
                       <td>
                           <div>
-                              <strong>{{$post->slug }}</strong>
+                              <strong>{{$decision->slug }}</strong>
                           </div>
                       </td>
                       <td class="project_progress">
                           <p style="max-width: 500px">
-                               @foreach ($post->translations as $translation)
+                               @foreach ($decision->translations as $translation)
                                   {{$translation->description}}
                               @endforeach
                           </p>
                       </td>
-                      <td class="project-state">
-                          <img src="{{\Storage::url($post->image)}}" width="200px" alt="">
+                      <td class="project-state text-center">
+                          {{ $decision->number_decision }}
                       </td>
                       <td class="project-actions text-right">
-                          {{-- <a class="btn btn-primary btn-sm" href="{{route('news.show', $post->id)}}">
+                          {{-- <a class="btn btn-primary btn-sm" href="{{route('news.show', $decision->id)}}">
                               <i class="fas fa-folder">
                               </i>
                               View
                           </a> --}}
-                          <a class="btn btn-info btn-sm" href="{{route('decision.edit', $post->id)}}">
+                          <a class="btn btn-info btn-sm" href="{{route('decision.edit', $decision->id)}}">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
                           </a>
-                          <a class="btn btn-danger btn-sm" href="{{route('decision.delete', $post->id)}}">
+                          <a class="btn btn-danger btn-sm" href="{{route('decision.delete', $decision->id)}}">
                               <i class="fas fa-trash">
                               </i>
                               Delete

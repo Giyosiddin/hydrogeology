@@ -75,7 +75,6 @@ $(function() {
             $('.form-group.image').show();
             $('.form-group.video').hide();
         } else {
-            $('.form-group.image').hide();
             $('.form-group.video').show();
         }
     });

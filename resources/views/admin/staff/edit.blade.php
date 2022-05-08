@@ -21,7 +21,6 @@
         </div>
       </div><!-- /.container-fluid -->
     </section>
-    {{-- {{ dd($post->translations) }} --}}
 
     <!-- Main content -->
     <section class="content">
@@ -118,7 +117,7 @@
                 <input type="tel" name="phone2" value="{{ $post->phone2 }}" class="form-control">
               </div>
               <div class="form-group">
-                <input type="submit" value="Update post" class="btn btn-success float-right">
+                <input type="submit" value="Update staff" class="btn btn-success float-right">
               </div>
             </div>
             <!-- /.card-body -->
