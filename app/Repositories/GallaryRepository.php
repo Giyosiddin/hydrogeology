@@ -23,7 +23,7 @@ class GallaryRepository
         $gallary->type_gallary = $request->type_gallary;
 
         $gallary->save();
-       return redirect()->route('gallary.edit',$gallary->id)->with(['msg' => "Post saved successfully!"]);
+       return redirect()->route('gallary.all')->with(['msg' => "Post saved successfully!"]);
     }
 
     public function edit($id)
@@ -42,7 +42,7 @@ class GallaryRepository
         $gallary->type_gallary = $request->type_gallary;
 
         $gallary->save();
-        return back()->with(['msg' => "Staff updated successfully!"]);
+        return redirect()->route('gallary.all')->with(['msg' => "Staff updated successfully!"]);
     }
 
     public function delete($id)

@@ -39,7 +39,7 @@ class MenuRepository
         $resource->name = $request->name;
         $resource->location = $request->location;
         $resource->save();
-        return back()->with(['msg' => "Menu updated successfully!"]);
+        return redirect()->route('menuItem.all',$resource->id)->with(['msg' => "Menu updated successfully!"]);
     }
 
     public function delete($id)
@@ -84,6 +84,6 @@ class MenuRepository
     {
         $menuItem = MenuItem::findOrFail($item_id);
         $update = $menuItem->update($request->all());
-        return redirect()->route('menuItem.edit', [$menu_id, $item_id]);
+        return redirect()->route('menuItem.all', $menu_id);
     }
 }

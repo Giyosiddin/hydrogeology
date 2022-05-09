@@ -14,7 +14,7 @@ class UsefulResource extends Model
 
     public function getImageUrlAttribute()
     {
-        return Storage::url($this->image);
+        return Storage::url($this->icon);
     }
 
 }

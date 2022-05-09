@@ -46,7 +46,7 @@ class UsefullRepository
         $resource->name = $request->name;
         $resource->url = $request->url;
         $resource->save();
-        return back()->with(['msg' => "Usefull Resource updated successfully!"]);
+        return redirect()->route('news.all')->with(['msg' => "Usefull Resource updated successfully!"]);
     }
 
     public function delete($id)

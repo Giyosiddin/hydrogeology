@@ -60,7 +60,7 @@ class NewsRepository
                 'body' => $item['body']
             ]);
         });
-        return back()->with(['msg' => "News updated successfully!"]);
+        return redirect()->route('news.all')->with(['msg' => "News updated successfully!"]);
     }
 
     public function delete($id)

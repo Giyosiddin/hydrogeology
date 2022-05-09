@@ -66,7 +66,7 @@ class DecisionRepository
                 'body' => $item['body']
             ]);
         });
-        return back()->with(['msg' => "Decision updated successfully!"]);
+        return redirect()->route('decision.all')->with(['msg' => "Decision updated successfully!"]);
     }
 
     public function delete($id)

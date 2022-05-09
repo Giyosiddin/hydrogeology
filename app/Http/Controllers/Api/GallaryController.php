@@ -16,7 +16,7 @@ class GallaryController extends Controller
             $this->perPage = $request->per_page;
         }
         $images = Gallary::where('type_gallary','image')->paginate($this->perPage);
-        return new JsonResource($images);
+        return JsonResource::collection($images);
     }
 
     public function videos(Request $request)
@@ -25,6 +25,6 @@ class GallaryController extends Controller
             $this->perPage = $request->per_page;
         }
         $videos = Gallary::where('type_gallary','video')->paginate($this->perPage);
-        return  new JsonResource($videos);
+        return  JsonResource::collection($videos);
     }
 }

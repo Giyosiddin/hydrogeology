@@ -64,7 +64,7 @@ class VacancyRepository
                 'body' => $item['body']
             ]);
         });
-        return back()->with(['msg' => "Vacancy updated successfully!"]);
+        return redirect()->route('news.all')->with(['msg' => "Vacancy updated successfully!"]);
     }
 
     public function delete($id)
