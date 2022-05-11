@@ -60,7 +60,7 @@ class PageRepository
                 'body' => $item['body']
             ]);
         });
-        return redirect()->route('news.all')->with(['msg' => "Page updated successfully!"]);
+        return redirect()->route('page.all')->with(['msg' => "Page updated successfully!"]);
     }
 
     public function delete($id)

@@ -24,9 +24,9 @@ class DecisionRequest extends FormRequest
     public function rules()
     {
         return [
-            'uz.title' => 'required|min:3|max:255',
-            'en.title' => 'required|min:3|max:255',
-            'ru.title' => 'required|min:3|max:255',
+            'uz.title' => 'required|min:3',
+            'en.title' => 'required|min:3',
+            'ru.title' => 'required|min:3',
             'uz.body' => 'required',
             'en.body' => 'required',
             'ru.body' => 'required',

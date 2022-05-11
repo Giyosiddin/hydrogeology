@@ -33,6 +33,8 @@ class NewsController extends Controller
         $news = News::whereSlug($slug)->with('translations', function($query){
             $query->where('locale', '=', $this->locale);
         })->firstOrFail();
+        $news->views = $news->views + 1;
+        $news->save();
         return new NewsResource($news);
     }
 }

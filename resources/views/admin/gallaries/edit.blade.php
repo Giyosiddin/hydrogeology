@@ -50,7 +50,7 @@
                     <option value="video" @if ($gallary->type_gallary == 'video')selected="selected" @endif>Video</option>
                   </select>
                 </div>
-                @if ($gallary->type_gallary == 'image')<div class="img form-group image"><a class=""><img src="{{\Storage::url($gallary->url)}}" alt=""></a></div>@endif
+                @if ($gallary->type_gallary == 'image')<div class="img form-group image"><a class=""><img src="{{\Storage::url($gallary->image)}}" alt=""></a></div>@endif
                 <div class="form-group row image" style="display:none">
                     <div class="dropzone col mt-2">
                         <div><i class="fas fa-plus"></i> <span>Media</span></div>

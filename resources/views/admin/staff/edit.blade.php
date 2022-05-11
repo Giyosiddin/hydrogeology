@@ -97,8 +97,8 @@
               <div class="form-group row" >
                 <div class="dropzone col mt-2">
                   <div><i class="fas fa-plus"></i> <span>Photo</span></div>
-                  <input type="file" name="image" id="image" class="form-control">
-                  <input type="hidden" name="delete_image" id="delete_image" value="@if(!empty($post->image)) {{$post->image}} @endif">
+                  <input type="file" name="image" id="image" value="@if(!empty($post->image)){{$post->image}}@endif" class="form-control">
+                  <input type="hidden" name="delete_image" id="delete_image" value="@if(!empty($post->image)){{$post->image}}@endif">
                 </div>
                 <div class="col mt-2 ">
                   <a href="#" class="btn btn-success w-100 pt-1 delete_file"><i class="fas fa-times"></i> <span>Delete</span></a>

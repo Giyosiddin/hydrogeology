@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Page;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Http\Resources\Json\JsonResource;
 
 class PageController extends Controller
 {
@@ -19,6 +20,6 @@ class PageController extends Controller
         $page = Page::whereSlug($slug)->with('translations', function($query){
             $query->where('locale', '=', $this->locale);
         })->get()->toArray();
-        return $page;
+        return new JsonResource($page);
     }
 }

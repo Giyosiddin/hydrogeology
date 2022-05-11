@@ -65,7 +65,7 @@ class StaffRepository
                 'position' => $item['position']
             ]);
         });
-        return redirect()->route('news.all')->with(['msg' => "Staff updated successfully!"]);
+        return redirect()->route('staff.all')->with(['msg' => "Staff updated successfully!"]);
     }
 
     public function delete($id)

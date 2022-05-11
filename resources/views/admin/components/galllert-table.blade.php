@@ -23,7 +23,7 @@
                       </td>
                       <td class="project-state">
                           @if($gallary->type_gallary == 'image')
-                              <img src="{{\Storage::url($gallary->url)}}" width="200px" alt="">
+                              <img src="{{\Storage::url($gallary->image)}}" width="200px" alt="">
                           @else
                               {{$gallary->url}}
                           @endif

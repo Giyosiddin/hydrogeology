@@ -34,6 +34,8 @@ class DecisionController extends Controller
         $decision = Decision::whereSlug($slug)->with('translations', function($query){
             $query->where('locale', '=', $this->locale);
         })->firstOrFail();
+        $decision->views = $decision->views + 1;
+        $decision->save();
         return new JsonResource($decision);
     }
 }

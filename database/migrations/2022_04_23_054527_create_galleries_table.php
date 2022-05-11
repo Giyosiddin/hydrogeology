@@ -15,7 +15,7 @@ class CreateGalleriesTable extends Migration
     {
         Schema::create('gallaries', function (Blueprint $table) {
             $table->id();
-            $table->string('url');
+            $table->string('url')->nullable();
             $table->enum('type_gallary',['video','image']);
             $table->string('description')->nullable();
             $table->timestamps();
