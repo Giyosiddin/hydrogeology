@@ -26,8 +26,8 @@ class Staff extends Model
 
     public static function boot() {
         parent::boot();
-        self::deleting(function($news) {
-             $news->translations()->each(function($translation) {
+        self::deleting(function($staff) {
+            $staff->translations()->each(function($translation) {
                 $translation->delete();
              });
         });
