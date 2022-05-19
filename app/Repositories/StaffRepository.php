@@ -2,6 +2,7 @@
 namespace App\Repositories;
 
 use App\Models\Staff;
+use App\Traits\Thumbnail;
 use Illuminate\Support\Str;
 use App\Traits\MakeSlug;
 
@@ -19,21 +20,24 @@ class StaffRepository
 
     public function store($request)
     {
+        if($request->hasFile('image')){
+//            dd(Thumbnail::makeThumbnail($request->file('image'), 'public/staff'));
+            $image = $request->file('image')->store('public/staff');
+            $staff->image = $image;
+        }
         $staff = new Staff();
         $staff->email = $request->email;
         $staff->phone = $request->phone;
         $staff->phone2 = $request->phone2;
-        if($request->hasFile('image')){
-			$image = $request->file('image')->store('public/staff');
-			$staff->image = $image;
-		}
+
         $staff->save();
         $request->collect(['uz','ru','en'])->each(function ($item, $key) use($staff) {
             $staff->translations()->create([
                 'locale' => $key,
                 'fullname' => $item['fullname'],
                 'description' => $item['description'],
-                'position' => $item['position']
+                'position' => $item['position'],
+                'work_days' => $item['work_days']
             ]);
         });
        return redirect()->route('staff.all')->with(['msg' => "Post saved successfully!"]);
@@ -62,7 +66,8 @@ class StaffRepository
             $staff->translations()->where('locale',$key)->update([
                 'fullname' => $item['fullname'],
                 'description' => $item['description'],
-                'position' => $item['position']
+                'position' => $item['position'],
+                'work_days' => $item['work_days']
             ]);
         });
         return redirect()->route('staff.all')->with(['msg' => "Staff updated successfully!"]);

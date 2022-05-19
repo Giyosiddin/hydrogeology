@@ -8,6 +8,7 @@ trait MakeSlug
 {
     public function createdSlug($model, $name)
     {
+        // $name = Str::limit($name, 25);
         $slug = Str::slug($name);
         if ($model::whereSlug($slug)->exists()) {
 

@@ -19,7 +19,9 @@ class PageController extends Controller
         }
         $page = Page::whereSlug($slug)->with('translations', function($query){
             $query->where('locale', '=', $this->locale);
-        })->get()->toArray();
+        })->firstOrFail();
+        $page->views = $page->views + 1;
+        $page->save();
         return new JsonResource($page);
     }
 }

@@ -34,3 +34,4 @@ Route::get('/gallary/images', 'Api\GallaryController@images');
 Route::get('/gallary/videos', 'Api\GallaryController@videos');
 Route::get('/resources', 'Api\UsefullResourceController@resources');
 Route::get('/menu/{slug}', 'Api\MenuController@getMenu');
+Route::post('/send-message', 'Api\HomeController@send');

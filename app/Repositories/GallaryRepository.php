@@ -2,6 +2,8 @@
 namespace App\Repositories;
 
 use App\Models\Gallary;
+use App\Traits\Thumbnail;
+use Gumlet\ImageResize;
 
 class GallaryRepository
 {
@@ -15,10 +17,12 @@ class GallaryRepository
     public function store($request)
     {
         $gallary = new Gallary();
-        if($request->hasFile('image')){
-            $gallary->image = $request->file('image')->store('public/gallary');
+        if ($request->hasFile('image')) {
+            $image = $request->file('image')->store('public/gallary');
+            $gallary->image = $image;
+//            dd(Thumbnail::makeThumbnail($request->file('image'), 'public/gallary'));
         }
-
+        // dd($gallary->makeThumbnail('image'));
         $gallary->url = $request->url;
         $gallary->type_gallary = $request->type_gallary;
 

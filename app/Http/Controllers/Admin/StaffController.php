@@ -38,7 +38,7 @@ class StaffController extends Controller
 
     public function update(StaffRequest $request, $id)
     {
-        // dd($request->all());
+         dd($request->all());
         return $this->staffRepository->update($request, $id);
     }
     public function delete($id)

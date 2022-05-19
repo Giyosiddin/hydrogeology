@@ -72,6 +72,10 @@
                                     <input type="text" required="required" id="position_{{ $translation->locale }}" required="required" value="{{$translation->position}}" name="{{ $translation->locale }}[position]"  class="form-control">
                                 </div>
                                 <div class="form-group">
+                                    <label for="inputName">Position</label>
+                                    <input type="text" id="work_days_{{ $translation->locale }}" required="required" value="{{$translation->work_days}}" name="{{ $translation->locale }}[work_days]"  class="form-control">
+                                </div>
+                                <div class="form-group">
                                     <label for="description_{{ $translation->locale }}">Excerpt</label>
                                     <textarea id="description_{{ $translation->locale }}" class="form-control" name="{{ $translation->locale }}[description]" rows="4">{{$translation->description}}</textarea>
                                 </div>

@@ -65,15 +65,19 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="inputName">Fullname</label>
-                                    <input type="text" required="required" id="fullname_{{ $translation }}" required="required" value="{{ old($translation) }}" name="{{ $translation }}[fullname]"  class="form-control">
+                                    <input type="text" required="required" id="fullname_{{ $translation }}" required="required" value="" name="{{ $translation }}[fullname]"  class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label for="inputName">Position</label>
-                                    <input type="text" required="required" id="position_{{ $translation }}" required="required" value="{{ old($translation) }}" name="{{ $translation }}[position]"  class="form-control">
+                                    <input type="text" required="required" id="position_{{ $translation }}" required="required" value="" name="{{ $translation }}[position]"  class="form-control">
                                 </div>
                                 <div class="form-group">
-                                <label for="description_{{ $translation }}">Excerpt</label>
-                                <textarea id="description_{{ $translation }}" class="form-control" value="{{ old($translation) }}" name="{{ $translation }}[description]" rows="4"></textarea>
+                                    <label for="inputName">Work days</label>
+                                    <input type="text" id="work_days_{{ $translation }}" required="required" value="" name="{{ $translation }}[work_days]"  class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="description_{{ $translation }}">Excerpt</label>
+                                    <textarea id="description_{{ $translation }}" class="form-control" value="" name="{{ $translation }}[description]" rows="4"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -105,15 +109,15 @@
               </div>
               <div class="form-group">
                 <label for="inputStatus">Email</label>
-                <input type="text" name="email" value="{{ old('email') }}" required class="form-control">
+                <input type="text" name="email" value="" required class="form-control">
               </div>
               <div class="form-group">
                 <label for="inputStatus">Phone</label>
-                <input type="tel" name="phone" value="{{ old('phone') }}" class="form-control">
+                <input type="tel" name="phone" value="" class="form-control">
               </div>
               <div class="form-group">
                 <label for="inputStatus">Phone 2</label>
-                <input type="tel" name="phone2" value="{{ old('phone2') }}" class="form-control">
+                <input type="tel" name="phone2" value="" class="form-control">
               </div>
               <div class="form-group">
                 <input type="submit" value="Add staff" class="btn btn-success float-right">
