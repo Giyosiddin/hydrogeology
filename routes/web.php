@@ -105,5 +105,5 @@ Route::middleware('check.admin')->prefix('dashboard')->namespace('Admin')->group
         Route::post('/{menu_id}/update-item/{item_id}', 'updateItem')->name('menuItem.update');
         Route::get('/{menu_id}/delete-item/{item_id}', 'deleteItem')->name('menuItem.delete');
     });
-
+    
 });

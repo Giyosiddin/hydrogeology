@@ -19,8 +19,8 @@ class GallaryRepository
         $gallary = new Gallary();
         if ($request->hasFile('image')) {
             $image = $request->file('image')->store('public/gallary');
-            $gallary->image = $image;
-//            dd(Thumbnail::makeThumbnail($request->file('image'), 'public/gallary'));
+//            $gallary->image = $image;
+            dd(Thumbnail::makeThumbnail($request->file('image'), 'public/gallary'));
         }
         // dd($gallary->makeThumbnail('image'));
         $gallary->url = $request->url;
