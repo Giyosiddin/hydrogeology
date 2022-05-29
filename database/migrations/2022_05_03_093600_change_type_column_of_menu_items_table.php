@@ -13,10 +13,10 @@ class ChangeTypeColumnOfMenuItemsTable extends Migration
      */
     public function up()
     {
-        Schema::table('menu_items', function($table)
-        {
-            $table->bigInteger('parent_id')->nullable()->change();
-        });
+//        Schema::table('menu_items', function($table)
+//        {
+//            $table->bigInteger('parent_id')->nullable()->change();
+//        });
     }
 
     /**
@@ -26,9 +26,9 @@ class ChangeTypeColumnOfMenuItemsTable extends Migration
      */
     public function down()
     {
-        Schema::table('menu_items', function($table)
-        {
-            $table->integer('parent_id')->unsigned()->nullable(false)->change();
-        });
+//        Schema::table('menu_items', function($table)
+//        {
+//            $table->integer('parent_id')->unsigned()->nullable(false)->change();
+//        });
     }
 }
