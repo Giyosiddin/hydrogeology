@@ -24,11 +24,11 @@ class ChangeTypeColumnOfMenuItemsTable extends Migration
      *
      * @return void
      */
-    public function down()
-    {
-//        Schema::table('menu_items', function($table)
-//        {
-//            $table->integer('parent_id')->unsigned()->nullable(false)->change();
-//        });
-    }
+//    public function down()
+//    {
+////        Schema::table('menu_items', function($table)
+////        {
+////            $table->integer('parent_id')->unsigned()->nullable(false)->change();
+////        });
+//    }
 }
