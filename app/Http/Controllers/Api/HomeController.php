@@ -13,6 +13,6 @@ class HomeController extends Controller
     {
         $details = $request->input();
         $mail = Mail::to('ggpuz@mail.ru')->send(new SendMail($details));
-        dd($mail);
+        return "Message is send successfully";
     }
 }
