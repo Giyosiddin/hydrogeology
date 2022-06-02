@@ -36,7 +36,7 @@ class StaffRequest extends FormRequest
             'uz.description' => 'nullable',
             'en.description' => 'nullable',
             'ru.description' => 'nullable',
-            'image' => 'required',
+//            'image' => 'required',
         ];
     }
 }
