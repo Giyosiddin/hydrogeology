@@ -9,13 +9,13 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1> Add usefull resource</h1>
+            <h1> Add slide</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{route('dashboard.index')}}">Home</a></li>
-              <li class="breadcrumb-item"><a href="{{route('usefull.all')}}">All usefull resources</a></li>
-              <li class="breadcrumb-item active">Add usefull resource</li>
+              <li class="breadcrumb-item"><a href="{{route('slider.all')}}">All slides</a></li>
+              <li class="breadcrumb-item active">Add slide</li>
             </ol>
           </div>
         </div>
@@ -34,7 +34,7 @@
           </ul>
       </div>
     @endif
-	<form action="{{route('usefull.store')}}" method="POST" enctype="multipart/form-data">
+	<form action="{{route('slider.store')}}" method="POST" enctype="multipart/form-data">
     @csrf
       <div class="row">
         <div class="col-md-9">
@@ -44,8 +44,16 @@
                     <div class="tab-pane fade show active">
                         <div class="card-body">
                             <div class="form-group">
-                                <label for="inputName">Name</label>
-                                <input type="text" required="required" id="" required="required" value="" name="name"  class="form-control">
+                                <label for="inputName">Name ru</label>
+                                <input type="text" required="required" id="" required="required" value="" name="name_ru"  class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputName">Name en</label>
+                                <input type="text" required="required" id="" required="required" value="" name="name_en"  class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputName">Name uz</label>
+                                <input type="text" required="required" id="" required="required" value="" name="name_uz"  class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="inputName">Link</label>
@@ -76,7 +84,7 @@
                 </div>
               </div>
               <div class="form-group">
-                <input type="submit" value="Add resource" class="btn btn-success float-right">
+                <input type="submit" value="Add slide" class="btn btn-success float-right">
               </div>
             </div>
             <!-- /.card-body -->

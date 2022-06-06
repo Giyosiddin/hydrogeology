@@ -81,6 +81,15 @@ Route::middleware('check.admin')->prefix('dashboard')->namespace('Admin')->group
         Route::post('/update/{id}', 'update')->name('gallary.update');
         Route::get('/delete/{id}', 'delete')->name('gallary.delete');
     });
+
+    Route::controller(SlideController::class)->prefix('slider')->group( function(){
+        Route::get('/all','getAll')->name('slider.all');
+        Route::get('/create','create')->name('slider.create');
+        Route::post('/store','store')->name('slider.store');
+        Route::get('/edit/{id}','edit')->name('slider.edit');
+        Route::post('/update/{id}', 'update')->name('slider.update');
+        Route::get('/delete/{id}', 'delete')->name('slider.delete');
+    });
     Route::controller(UsefulResourceController::class)->prefix('usefull-resources')->group( function(){
         Route::get('/all','getAll')->name('usefull.all');
         Route::get('/create','create')->name('usefull.create');
@@ -105,5 +114,5 @@ Route::middleware('check.admin')->prefix('dashboard')->namespace('Admin')->group
         Route::post('/{menu_id}/update-item/{item_id}', 'updateItem')->name('menuItem.update');
         Route::get('/{menu_id}/delete-item/{item_id}', 'deleteItem')->name('menuItem.delete');
     });
-    
+
 });

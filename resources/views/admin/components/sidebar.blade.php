@@ -94,6 +94,14 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="{{route('slider.all')}}" class="nav-link {{ request()->routeIs('slider.*') ? 'active' : '' }}">
+              <i class="nav-icon fas fa-images"></i>
+              <p>
+                Slider
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="{{route('usefull.all')}}" class="nav-link {{ request()->routeIs('usefull.*') ? 'active' : '' }}">
               <i class="nav-icon fas fa-file"></i>
               <p>
