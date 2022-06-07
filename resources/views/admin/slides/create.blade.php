@@ -44,16 +44,16 @@
                     <div class="tab-pane fade show active">
                         <div class="card-body">
                             <div class="form-group">
+                                <label for="inputName">Name uz</label>
+                                <input type="text" required="required" id="" required="required" value="" name="name_uz"  class="form-control">
+                            </div>
+                            <div class="form-group">
                                 <label for="inputName">Name ru</label>
                                 <input type="text" required="required" id="" required="required" value="" name="name_ru"  class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="inputName">Name en</label>
                                 <input type="text" required="required" id="" required="required" value="" name="name_en"  class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="inputName">Name uz</label>
-                                <input type="text" required="required" id="" required="required" value="" name="name_uz"  class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="inputName">Link</label>

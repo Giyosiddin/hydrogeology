@@ -75,7 +75,10 @@ li.nav-item ul.nav.nav-treeview {
     position: relative;
 } */
 ul.list-group li div {
-    display: inline;
-    /* border: 1px solid #ddd !important; */
+    display: inline-block;
     padding: 10px 8%;
+    width: 32%;
+}
+ul.list-group.sub-list {
+    padding-left: 10%;
 }
