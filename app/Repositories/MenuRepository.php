@@ -86,4 +86,10 @@ class MenuRepository
         $update = $menuItem->update($request->all());
         return redirect()->route('menuItem.all', $menu_id);
     }
+    public function deleteItem($menu_id, $item_id)
+    {
+        $menuItem = MenuItem::findOrFail($item_id);
+        $delete = $menuItem->delete();
+        return redirect()->route('menuItem.all', $menu_id);
+    }
 }

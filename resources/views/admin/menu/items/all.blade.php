@@ -45,12 +45,12 @@
             <a href="{{route('menuItem.create', $menu_id)}}" class="btn btn-block btn-success btn-flat"> Add menu</a>
           </div>
         </div>
-        <div class="card-body p-0">
+        <span class="card-body p-0">
           <ul class="list-group">
               <li class="list-group-item active">
-                      <div>
+                      <span>
                           #
-                      </div>
+                      </span>
                       <div >
                          Name
                       </div>
@@ -62,9 +62,9 @@
               </li>
                 @foreach($items as $item)
                 <li class="list-group-item">
-                  <div clas="col">
+                  <span>
                         #
-                    </div>
+                    </span>
                     <div clas="col">
                         {{$item->name_uz}}
                     </div>

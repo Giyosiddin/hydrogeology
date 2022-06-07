@@ -71,4 +71,8 @@ class MenuController extends Controller
     {
         return $this->menuRepository->updateItem($request, $menu_id, $item_id);
     }
+    public function deleteItem($menu_id, $item_id)
+    {
+        return $this->menuRepository->deleteItem($menu_id, $item_id);
+    }
 }
