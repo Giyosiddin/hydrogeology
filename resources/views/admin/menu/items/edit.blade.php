@@ -9,7 +9,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1> Update menu</h1>
+            <h1> Update menu item</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -86,7 +86,11 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Update post" class="btn btn-success float-right">
+                    <label for="inputName">Order</label>
+                    <input type="text" required="required" id="" required="required" value="{{$item->order}}" name="order"  class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Update item" class="btn btn-success float-right">
                 </div>
             </div>
             <!-- /.card-body -->

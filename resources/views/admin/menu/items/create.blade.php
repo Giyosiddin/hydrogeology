@@ -83,6 +83,10 @@
                     </select>
                 </div>
                 <div class="form-group">
+                    <label for="inputName">Order</label>
+                    <input type="text" required="required" id="" required="required" value="" name="order"  class="form-control">
+                </div>
+                <div class="form-group">
                     <input type="submit" value="Add item" class="btn btn-success float-right">
                 </div>
             </div>
