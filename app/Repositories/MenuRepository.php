@@ -53,12 +53,13 @@ class MenuRepository
     public function getAllItems($menu_id)
     {
         // $menu = Menu::with('items','items.parent')->findOrFail($menu_id);
-        $items = MenuItem::with('parent','children')->where('menu_id', $menu_id)->get()->toTree();
+        $items = MenuItem::with('parent','children')->orderBy('order', 'ASC')
+            ->where('menu_id', $menu_id)->get()->toTree();
         return view('admin.menu.items.all', compact('items', 'menu_id'));
     }
     public function createItem($menu_id)
     {
-        $items = MenuItem::where('menu_id', $menu_id)->get();
+        $items = MenuItem::where('menu_id', $menu_id)->doesntHave('parent')->get();
         return view('admin.menu.items.create', compact('items'));
     }
     public function storeItem($request, $menu_id)
