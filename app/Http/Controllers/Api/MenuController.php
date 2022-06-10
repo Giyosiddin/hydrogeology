@@ -12,7 +12,7 @@ class MenuController extends Controller
     public function getMenu($slug)
     {
         $menu = Menu::where('location', $slug)->first();
-        $items = MenuItem::get()->toTree();
+        $items = MenuItem::orderBy('order', 'ASC')->get()->toTree();
         return $items;
     }
 }
