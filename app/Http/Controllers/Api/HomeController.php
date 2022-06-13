@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\SendFormRequest;
 use App\Mail\SendMail;
 use App\Models\Slide;
 use Illuminate\Http\Request;
@@ -10,7 +11,7 @@ use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
-    public function send(Request $request)
+    public function send(SendFormRequest $request)
     {
         $details = $request->input();
         $mail = Mail::to('ggpuz@mail.ru')->send(new SendMail($details));
