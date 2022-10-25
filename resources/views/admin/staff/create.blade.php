@@ -119,6 +119,10 @@
                 <label for="inputStatus">Phone 2</label>
                 <input type="tel" name="phone2" value="" class="form-control">
               </div>
+                <div class="form-group">
+                    <label for="inputStatus">Order</label>
+                    <input type="number" name="order" value="" class="form-control">
+                </div>
               <div class="form-group">
                 <input type="submit" value="Add staff" class="btn btn-success float-right">
               </div>

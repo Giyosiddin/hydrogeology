@@ -22,7 +22,7 @@ class StaffController extends Controller
         }
         $vacancies = Staff::with(['translations' => function($query){
             $query->where('locale', '=', $this->locale);
-        }])->paginate($this->per_page);
+        }])->orderBy('order', 'asc')->paginate($this->per_page);
         return JsonResource::collection($vacancies);
     }
 

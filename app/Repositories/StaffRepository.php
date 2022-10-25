@@ -24,6 +24,7 @@ class StaffRepository
         $staff->email = $request->email;
         $staff->phone = $request->phone;
         $staff->phone2 = $request->phone2;
+        $staff->order = $request->order;
         if($request->hasFile('image')){
 //            dd(Thumbnail::makeThumbnail($request->file('image'), 'public/staff'));
             $image = $request->file('image')->store('public/staff');
@@ -61,6 +62,7 @@ class StaffRepository
         $staff->email = $request->email;
         $staff->phone = $request->phone;
         $staff->phone2 = $request->phone2;
+        $staff->order = $request->order;
         $staff->save();
         $request->collect(['uz','ru','en'])->each(function ($item, $key) use($staff) {
             $staff->translations()->where('locale',$key)->update([
