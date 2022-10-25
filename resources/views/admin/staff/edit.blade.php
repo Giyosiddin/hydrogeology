@@ -121,6 +121,10 @@
                 <input type="tel" name="phone2" value="{{ $post->phone2 }}" class="form-control">
               </div>
               <div class="form-group">
+                <label for="inputStatus">Order</label>
+                <input type="number" name="order" value="{{ $post->order }}" class="form-control">
+              </div>
+              <div class="form-group">
                 <input type="submit" value="Update staff" class="btn btn-success float-right">
               </div>
             </div>
