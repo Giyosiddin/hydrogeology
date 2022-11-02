@@ -23,7 +23,7 @@ class VacancyController extends Controller
         }
         $vacancies = Vacancy::with(['translations' => function($query){
             $query->where('locale', '=', $this->locale);
-        }])->paginate($this->per_page);
+        }])->orderByDesc('id')->paginate($this->per_page);
         return VacancyResource::collection($vacancies);
     }
 
