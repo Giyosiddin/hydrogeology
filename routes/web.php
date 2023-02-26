@@ -24,7 +24,7 @@ Route::controller(AuthController::class)->group(function(){
 });
 
 Route::middleware('check.admin')->prefix('dashboard')->namespace('Admin')->group(function(){
-    Route::post('ckeditor/image_upload', 'MainController@upload')->name('upload');
+    // Route::post('ckeditor/image_upload', 'MainController@upload')->name('upload');
 
     Route::get('/', 'MainController@index')->name('dashboard.index');
 
@@ -115,4 +115,6 @@ Route::middleware('check.admin')->prefix('dashboard')->namespace('Admin')->group
         Route::get('/{menu_id}/delete-item/{item_id}', 'deleteItem')->name('menuItem.delete');
     });
 
+    Route::post('image-upload', "BaseController@upload")->name('image.upload');
 });
+

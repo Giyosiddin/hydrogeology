@@ -46,6 +46,7 @@ $(function() {
 //     }
 // });
 
+
 $('a.delete_file').on('click', function(e){
   e.preventDefault();
   $(this).parent().parent().prev('.img').children('a').children().remove();
