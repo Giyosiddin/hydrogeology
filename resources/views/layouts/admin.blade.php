@@ -108,5 +108,13 @@
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{asset('/admin-assets/dist/js/pages/dashboard2.js')}}"></script>
 <script src="{{asset('/admin-assets/custom.js')}}"></script>
+
+<script>
+var textarea = $('.ckeditor');
+CKEDITOR.replace( 'uz[body]', {
+    filebrowserUploadUrl: "{{route('image.upload', ['_token' => csrf_token() ])}}",
+    filebrowserUploadMethod: 'form'
+});
+</script>
 </body>
 </html>
